@@ -1,0 +1,32 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UseWPF>true</UseWPF>
+    <UseWindowsForms>true</UseWindowsForms>
+    <ApplicationIcon>Resources\Icons\app.ico</ApplicationIcon>
+    <AssemblyName>StayAwake</AssemblyName>
+    <RootNamespace>StayAwake</RootNamespace>
+    <Version>1.0.0</Version>
+    <Authors>Vladislav Kravchenko</Authors>
+    <Company>Vladislav Kravchenko</Company>
+    <Copyright>Copyright © 2026 Vladislav Kravchenko</Copyright>
+    <Product>StayAwake</Product>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+    <EnableWindowsTargeting>true</EnableWindowsTargeting>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <InternalsVisibleTo Include="StayAwake.Tests" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="CommunityToolkit.Mvvm" Version="8.3.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="Resources\Icons\app.ico" CopyToOutputDirectory="PreserveNewest" />
+  </ItemGroup>
+</Project>

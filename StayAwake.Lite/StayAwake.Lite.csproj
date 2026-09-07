@@ -1,0 +1,22 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UseWPF>true</UseWPF>
+    <AssemblyName>StayAwake.Lite</AssemblyName>
+    <RootNamespace>StayAwake.Lite</RootNamespace>
+    <Version>1.0.0</Version>
+    <Authors>Vladislav Kravchenko</Authors>
+    <Company>Vladislav Kravchenko</Company>
+    <Copyright>Copyright © 2026 Vladislav Kravchenko</Copyright>
+    <Product>StayAwake Lite</Product>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+    <ApplicationIcon>Resources\app.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Resource Include="Resources\app.ico" />
+    <PackageReference Include="Microsoft.Win32.SystemEvents" Version="8.0.0" />
+  </ItemGroup>
+</Project>

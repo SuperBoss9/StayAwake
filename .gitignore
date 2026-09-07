@@ -1,0 +1,49 @@
+## .NET
+bin/
+obj/
+[Bb]in/
+[Oo]bj/
+[Dd]ebug/
+[Rr]elease/
+x64/
+x86/
+[Aa][Rr][Mm]/
+[Aa][Rr][Mm]64/
+bld/
+[Bb]uild/
+[Ll]og/
+[Ll]ogs/
+*.user
+*.userosscache
+*.suo
+*.userprefs
+*.sln.docstates
+*.dbmdl
+*.jfm
+*.pfx
+*.publishsettings
+*.nupkg
+*.snupkg
+project.lock.json
+project.fragment.lock.json
+artifacts/
+TestResults/
+[Tt]est[Rr]esult*/
+*.VisualState.xml
+.vs/
+.vscode/
+*.DotSettings.user
+*.rsuser
+
+## Publish output
+dist/
+publish/
+
+## OS
+Thumbs.db
+Desktop.ini
+.DS_Store
+
+## App local
+*.log
+appsettings.Development.json

@@ -1,0 +1,115 @@
+<Window x:Class="StayAwake.Lite.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="StayAwake Lite"
+        Icon="Resources/app.ico"
+        Width="360"
+        SizeToContent="Height"
+        MinWidth="320"
+        MinHeight="380"
+        ResizeMode="CanMinimize"
+        WindowStartupLocation="CenterScreen"
+        Background="{DynamicResource BgBrush}"
+        FontFamily="Segoe UI Variable Text, Segoe UI"
+        FontSize="14"
+        Closing="Window_Closing">
+  <StackPanel Margin="24">
+    <TextBlock Text="StayAwake Lite"
+               FontSize="22" FontWeight="SemiBold"
+               Foreground="{DynamicResource TextBrush}"/>
+    <TextBlock x:Name="StatusText"
+               Text="Keeping PC awake"
+               Margin="0,6,0,0"
+               TextWrapping="Wrap"
+               Foreground="{DynamicResource AccentBrush}"/>
+
+    <Border Margin="0,18,0,0"
+            Background="{DynamicResource SurfaceBrush}"
+            BorderBrush="{DynamicResource BorderBrush}"
+            BorderThickness="1"
+            CornerRadius="10"
+            Padding="14,12">
+      <DockPanel>
+        <ToggleButton x:Name="DisplayToggle"
+                      DockPanel.Dock="Right"
+                      Width="52" Height="28"
+                      Cursor="Hand"
+                      Checked="DisplayToggle_Changed"
+                      Unchecked="DisplayToggle_Changed">
+          <ToggleButton.Template>
+            <ControlTemplate TargetType="ToggleButton">
+              <Grid>
+                <Border x:Name="Track"
+                        Background="{DynamicResource OffBrush}"
+                        CornerRadius="14"
+                        Width="52" Height="28"/>
+                <Ellipse x:Name="Thumb"
+                         Width="22" Height="22"
+                         Fill="White"
+                         HorizontalAlignment="Left"
+                         Margin="3,0,0,0"/>
+              </Grid>
+              <ControlTemplate.Triggers>
+                <Trigger Property="IsChecked" Value="True">
+                  <Setter TargetName="Track" Property="Background" Value="{DynamicResource OnBrush}"/>
+                  <Setter TargetName="Thumb" Property="HorizontalAlignment" Value="Right"/>
+                  <Setter TargetName="Thumb" Property="Margin" Value="0,0,3,0"/>
+                </Trigger>
+              </ControlTemplate.Triggers>
+            </ControlTemplate>
+          </ToggleButton.Template>
+        </ToggleButton>
+
+        <StackPanel Margin="0,0,12,0" VerticalAlignment="Center">
+          <TextBlock Text="Keep display ON"
+                     FontWeight="SemiBold"
+                     Foreground="{DynamicResource TextBrush}"/>
+          <TextBlock x:Name="DisplayHintText"
+                     Text="Off — display may turn off"
+                     FontSize="12"
+                     Foreground="{DynamicResource MutedBrush}"
+                     Margin="0,2,0,0"/>
+        </StackPanel>
+      </DockPanel>
+    </Border>
+
+    <Border Background="{DynamicResource SurfaceBrush}"
+            BorderBrush="{DynamicResource BorderBrush}"
+            BorderThickness="1"
+            CornerRadius="10"
+            Padding="14"
+            Margin="0,14,0,0">
+      <StackPanel>
+        <TextBlock Text="Awake since"
+                   Foreground="{DynamicResource MutedBrush}"
+                   FontSize="12"/>
+        <TextBlock x:Name="StartedAtText"
+                   FontSize="16"
+                   FontWeight="SemiBold"
+                   Foreground="{DynamicResource TextBrush}"
+                   Margin="0,2,0,10"/>
+        <TextBlock Text="Elapsed"
+                   Foreground="{DynamicResource MutedBrush}"
+                   FontSize="12"/>
+        <TextBlock x:Name="ElapsedText"
+                   FontSize="28"
+                   FontWeight="SemiBold"
+                   FontFamily="Cascadia Mono, Consolas, Segoe UI"
+                   Foreground="{DynamicResource AccentBrush}"
+                   Margin="0,2,0,0"/>
+      </StackPanel>
+    </Border>
+
+    <TextBlock Text="Close the window to allow sleep again."
+               Foreground="{DynamicResource MutedBrush}"
+               FontSize="12"
+               HorizontalAlignment="Center"
+               Margin="0,14,0,0"
+               TextWrapping="Wrap"/>
+    <TextBlock Text="© 2026 Vladislav Kravchenko"
+               Foreground="{DynamicResource MutedBrush}"
+               FontSize="11"
+               HorizontalAlignment="Center"
+               Margin="0,8,0,0"/>
+  </StackPanel>
+</Window>
